@@ -16,6 +16,7 @@ const Head = () => {
   const [ searchQuery, setSearchQuery ] = useState('');
   const [ suggestions, setSuggestions ] = useState([]);
   const [ searchClass, setSearchClass ] = useState(false);
+  
   useEffect(()=> {
     const timer = setTimeout(() => {
       if(searchCache[searchQuery]){
@@ -81,6 +82,7 @@ const Head = () => {
             <ul>
               {suggestions.map((s) => (
                 <li key={s} className="px-2 py-2 shadow-sm hover:bg-gray-100">
+                  <FontAwesomeIcon icon={faMagnifyingGlass} className='px-2'/>
                   {s}
                 </li>
               ))}
